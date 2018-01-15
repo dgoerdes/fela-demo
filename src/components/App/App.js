@@ -1,7 +1,12 @@
 import React from 'react';
-import Home from '../Home/Home';
-import logo from './logo.svg';
-import './App.scss';
+import { createComponent } from 'react-fela';
+
+const title = () => ({
+    fontSize: '64px',
+    color: '#6699ff'
+});
+
+const Title = createComponent(title, 'h1');
 
 /**
  * APP
@@ -10,13 +15,8 @@ import './App.scss';
  */
 const App = () => {
     return (
-        <div className="c-app">
-            <div className="c-app__header">
-                <img src={logo} className="c-app__logo" alt="logo" />
-                <h2>Welcome to React</h2>
-            </div>
-
-            <Home />
+        <div>
+            <Title>fela Styles \o/</Title>
         </div>
     );
 };

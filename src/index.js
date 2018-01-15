@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container } from '@cerebral/react';
+import { Provider as Fela } from 'react-fela';
+import { createRenderer } from 'fela';
 import App from './components/App/App';
 import controller from './controller';
 import registerServiceWorker from './registerServiceWorker';
-import './index.scss';
+
+const felaRenderer = createRenderer();
 
 ReactDOM.render(
     <Container controller={controller} >
-        <App />
+        <Fela renderer={felaRenderer}>
+            <App />
+        </Fela>
     </Container>,
     document.getElementById('root')
 );
