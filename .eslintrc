@@ -11,6 +11,7 @@
     },
     "globals": {
         "URL": false,
-        "fetch": false
+        "fetch": false,
+        "css": false
     }
 }
