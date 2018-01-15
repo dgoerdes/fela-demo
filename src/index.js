@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Container } from '@cerebral/react';
 import { Provider as Fela } from 'react-fela';
 import { createRenderer } from 'fela';
-import App from './components/App/App';
+import App from './containers/App/App';
 import controller from './controller';
 import registerServiceWorker from './registerServiceWorker';
 
