@@ -56,14 +56,15 @@ const getWeightedStyle = (weight) => {
  * @returns {XML} -
  */
 const Headline = ({ weight, children }) => {
-    const HeadlineTag = createComponent(molecule([
-        headline,
-        getWeightedStyle(weight)
-    ]), `h${weight}`);
+    const HeadlineTag = createComponent(
+        molecule([
+            headline,
+            getWeightedStyle(weight)
+        ]),
+        `h${weight}`
+    );
 
-    return (
-        <HeadlineTag>{children}</HeadlineTag>
-    )
+    return <HeadlineTag>{children}</HeadlineTag>
 };
 
 Headline.propTypes = {
