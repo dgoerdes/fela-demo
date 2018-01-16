@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { combineRules } from 'fela';
 import { createComponent } from 'react-fela';
-import molecule from '../../utils/css/molecule';
 
 const headline = () => css`
     margin: 0;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-style: normal;
+    font-weight: 300;
 `;
 
 const h1 = () => css`
@@ -23,20 +23,22 @@ const h2 = () => css`
 
 const h3 = () => css`
     font-size: 36px;
+    font-weight: 400;
 `;
 
 const h4 = () => css`
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 400;
 `;
 
 const h5 = () => css`
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 400;
 `;
 
 const h6 = () => css`
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 400;
 `;
 
 const getWeightedStyle = (weight) => {
@@ -56,12 +58,15 @@ const getWeightedStyle = (weight) => {
  *
  * @returns {XML} -
  */
-const Headline = ({ weight, children }) => {
+const Headline = ({ weight, atoms, children }) => {
+    atoms = atoms || [];
+
     const HeadlineTag = createComponent(
-        molecule([
+        combineRules (
             headline,
-            getWeightedStyle(weight)
-        ]),
+            getWeightedStyle(weight),
+            ...atoms
+        ),
         `h${weight}`
     );
 
@@ -69,7 +74,8 @@ const Headline = ({ weight, children }) => {
 };
 
 Headline.propTypes = {
-    weight: PropTypes.number
+    weight: PropTypes.number,
+    atoms: PropTypes.arrayOf(PropTypes.func),
 };
 
 export default Headline;
