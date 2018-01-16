@@ -1,5 +1,14 @@
 import React from 'react';
+import { createComponent } from 'react-fela';
 import Headline from '../../components/Headline/Headline';
+
+const testStyles = () => css`
+    > h1 {
+        color: red;
+    }
+`;
+
+const TestStyles = createComponent(testStyles, 'main');
 
 /**
  * APP
@@ -8,7 +17,7 @@ import Headline from '../../components/Headline/Headline';
  */
 const App = () => {
     return (
-        <div>
+        <TestStyles>
             <Headline weight={1}>Headline H1</Headline>
             <Headline weight={2}>Headline H2</Headline>
             <Headline weight={3}>Headline H3</Headline>
@@ -18,12 +27,36 @@ const App = () => {
 
             <div>
                 <ul>
-                    <li>How to do reset/global styles?</li>
-                    <li>How to do element styles?</li>
-                    <li>Keyframes?!</li>
+                    <li>
+                        <strong>Variables and Settings?</strong>
+                    </li>
+                    <li>
+                        <strong>How to do reset/global styles?</strong>
+                        <p>
+                            Tried with Shell component by using fela & operator.<br />
+                            As this does not work for styles that need to be applied to html and body etc.
+                            normalize.css was imported to the index.js in the way create-react-app mentions it.
+                        </p>
+                        <p>
+                            Also using fela & with a lot of subselector bloats the styles and works agains the atomic principles.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How to do element styles?</strong>
+                        <p>
+                            As <a href="http://fela.js.org/docs/basics/Rules.html">documented here</a> you can use
+                            pseudo classes and also element and class child selectors.
+                        </p>
+                        <p>
+                            Use them with caution! And best always try to use > instead of &.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Keyframes</strong>
+                    </li>
                 </ul>
             </div>
-        </div>
+        </TestStyles>
     );
 };
 

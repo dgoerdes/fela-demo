@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'normalize.css';
 import { Container } from '@cerebral/react';
 import { Provider as Fela } from 'react-fela';
 import { createRenderer } from 'fela';

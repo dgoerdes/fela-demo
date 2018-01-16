@@ -4,6 +4,7 @@ import { createComponent } from 'react-fela';
 import molecule from '../../utils/css/molecule';
 
 const headline = () => css`
+    margin: 0;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-style: normal;
 `;
