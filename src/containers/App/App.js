@@ -151,6 +151,16 @@ const App = () => {
                 </p>
             </Container>
 
+            <Container>
+                <Headline weight={2}>Further Research</Headline>
+                <ul>
+                    <li>Where is my Stylesheet?</li>
+                    <li>Performance during run time</li>
+                    <li>Server-side rendering</li>
+                    <li>Better debugging tools</li>
+                </ul>
+            </Container>
+
             <Container atoms={[flex({ align: 'center', evenSplit: 2 })]}>
                 <div>
                     <Headline weight={1}>Headline H1</Headline>
