@@ -8,6 +8,7 @@ import embedded from 'fela-plugin-embedded'
 import App from './containers/App/App';
 import controller from './controller';
 import registerServiceWorker from './registerServiceWorker';
+import './styles/reset.css';
 
 const felaRenderer = createRenderer({
     plugins: [
