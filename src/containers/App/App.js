@@ -1,4 +1,5 @@
 import React from 'react';
+import { createComponent } from 'react-fela';
 import Headline from '../../components/Headline/Headline';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 import Container from '../../components/Container/Container';
@@ -6,6 +7,14 @@ import Molecule from '../../components/Molecule/Molecule';
 import { marginBottom, marginTop } from '../../utils/css/spacings';
 import { textCenter } from '../../utils/css/alignment';
 import { flex } from '../../utils/css/flex';
+
+const myStyle = () => ({
+    color: 'red',
+    fontSize: '48px',
+    fontWeight: '300',
+    textAlign: 'center',
+});
+const MyStyle = createComponent(myStyle, 'div');
 
 /**
  * APP
@@ -15,6 +24,10 @@ import { flex } from '../../utils/css/flex';
 const App = () => {
     return (
         <main>
+            <MyStyle>
+                THIS IS FELA!
+            </MyStyle>
+
             <Container>
                 <Molecule atoms={[
                     marginTop('60px'),
@@ -57,7 +70,7 @@ const App = () => {
                     and the whole setup took about 40 minutes to see the first styles applied by fela on the page.
                 </p>
                 <p>
-                    <strong>But</strong>, within those 40 minutes the first "what the fu**" moment happend.
+                    <strong>But</strong>, within those 40 minutes the first “what the fu**“ moment happend.
                 </p>
 
                 <Headline weight={4}>The Problem</Headline>

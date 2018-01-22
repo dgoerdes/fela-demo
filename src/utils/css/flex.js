@@ -16,3 +16,11 @@ export const flex = ({ align, justify, evenSplit }) => {
 
     return () => styles;
 };
+
+export const flexWrap = ({ type }) => {
+    const styles = css`
+        flex-wrap: ${type || 'wrap'};
+    `;
+
+    return () => styles;
+};
